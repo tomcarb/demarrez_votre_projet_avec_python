@@ -4,7 +4,7 @@ import json
 
 def read_values_from_json(file, key):
     values = []
-    with open(file) as f:
+    with open(file, encoding="utf-8") as f: #pour éviter les problèmes de caractères accentués 
         data = json.load(f)
         for entry in data:
             values.append(entry[key])
